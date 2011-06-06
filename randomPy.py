@@ -1,19 +1,10 @@
 import random;
 
-f = open('numb1.txt', 'r');
-word1=f.readlines();
-
-f = open('numb2.txt','r');
-word2=f.readlines();
-
-f = open('numb3.txt','r');
-word3=f.readlines();
-
-f = open('numb4.txt','r');
-word4=f.readlines();
-
+f = open('numb1.txt','r'); word1=f.readlines();
+f = open('numb2.txt','r'); word2=f.readlines();
+f = open('numb3.txt','r'); word3=f.readlines();
+f = open('numb4.txt','r'); word4=f.readlines();
 f.close();
-
 
 while True:
     numberOfLines=input("Веедите кол-во строк которое хотите получить:");
