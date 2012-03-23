@@ -11,8 +11,8 @@ while True:
     if numberOfLines.isdigit():
         break
 
+# Напечатаем случайную фразу numberOfLines раз
 for i in range(int(numberOfLines)):
-    # Выводит на печать случайные слова из того списка что мы только что прочитали
     randomWord1 = random.choice(word1)
     randomWord2 = random.choice(word2)
     randomWord3 = random.choice(word3)
