@@ -1,16 +1,23 @@
 import random
+import sys
 # read().splitlines() позволяет получить список строк без '\n' на конце в отличии от просто readlines()
 word1 = open('word1.txt','r').read().splitlines()
 word2 = open('word2.txt','r').read().splitlines()
 word3 = open('word3.txt','r').read().splitlines()
 word4 = open('word4.txt','r').read().splitlines()
 
-# Бесконечный цикл пока не получим число строк
-while True:
-    numberOfLines = input("Веедите кол-во строк которое хотите получить:")
-    if numberOfLines.isdigit():
-        break
-
+# Получим число строк либо из командной строки либо от пользователя
+if len(sys.argv) == 1: 
+	# Бесконечный цикл пока не получим число строк
+	while True:
+	    numberOfLines = input("Веедите кол-во строк которое хотите получить:")
+	    if numberOfLines.isdigit():
+	        break
+else:
+	numberOfLines = sys.argv[1]
+	if not numberOfLines.isdigit():
+		sys.exit("Error: Аругементом командной строки должно являться число строк которое вы хотите получить")
+	
 # Напечатаем случайную фразу numberOfLines раз
 for i in range(int(numberOfLines)):
     randomWord1 = random.choice(word1)
