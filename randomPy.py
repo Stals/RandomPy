@@ -15,10 +15,10 @@ def getNumberOfLines():
 	return int(numberOfLines)
 
 # read().splitlines() позволяет получить список строк без '\n' на конце в отличии от просто readlines()
-word1 = open('word1.txt','r').read().splitlines()
-word2 = open('word2.txt','r').read().splitlines()
-word3 = open('word3.txt','r').read().splitlines()
-word4 = open('word4.txt','r').read().splitlines()
+word1 = open("word1.txt").read().splitlines()
+word2 = open("word2.txt").read().splitlines()
+word3 = open("word3.txt").read().splitlines()
+word4 = open("word4.txt").read().splitlines()
 	
 # Напечатаем случайную фразу numberOfLines раз
 for i in range(getNumberOfLines()):
