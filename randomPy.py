@@ -1,30 +1,8 @@
 import random
-import sys
-def getNumberOfLines():
-	# Получим число строк либо от пользователя либо как аргумент командной строки
-	if len(sys.argv) == 1: 
-		# Бесконечный цикл пока не получим число строк
-		while True:
-		    numberOfLines = input("Веедите кол-во строк которое хотите получить:")
-		    if numberOfLines.isdigit():
-		        break
-	else:
-		numberOfLines = sys.argv[1]
-		if not numberOfLines.isdigit():
-			sys.exit("Error: Аругементом командной строки должно являться число строк которое вы хотите получить")
-	return int(numberOfLines)
-
-# read().splitlines() позволяет получить список строк без '\n' на конце в отличии от просто readlines()
-word1 = open("word1.txt").read().splitlines()
-word2 = open("word2.txt").read().splitlines()
-word3 = open("word3.txt").read().splitlines()
-word4 = open("word4.txt").read().splitlines()
-	
-# Напечатаем случайную фразу numberOfLines раз
-for i in range(getNumberOfLines()):
-    randomWord1 = random.choice(word1)
-    randomWord2 = random.choice(word2)
-    randomWord3 = random.choice(word3)
-    randomWord4 = random.choice(word4)
-    print("{0} {1}, который любит {2} {3}.".format(randomWord1, randomWord2, randomWord3, randomWord4))
-
+# Читаем файлы и получаем случайное слово
+word1 = random.choice( open("word1.txt").read().splitlines() )
+word2 = random.choice( open("word2.txt").read().splitlines() )
+word3 = random.choice( open("word3.txt").read().splitlines() )
+word4 = random.choice( open("word4.txt").read().splitlines() )	
+# Напечатаем случайную фразу 
+print("{0} {1}, который любит {2} {3}.".format(word1, word2, word3, word4))
